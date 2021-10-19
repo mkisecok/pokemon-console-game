@@ -6,7 +6,8 @@ class Pokemon
         this.name=name;
         this.health=health;
         this.magic=magic;
-        this.skills=[]
+        this.skills=[];
+        this.magicCount=0 
     }
 
  learnAttackSkill(skill)
@@ -33,12 +34,21 @@ class Pokemon
         }
         return `${this.name} have not enough magic, cannot launch attack!`
 
-    }
+   
+
+    
 
  getMagic()
-    {
-        this.magic= this.magic + 25
-        return `${this.name} got 25 magic back`
+    {   
+        if(this.magicCount < 2)
+        {
+            this.magic += 25
+            this.magicCount+=1
+            return `${this.name} got 25 magic back`
+
+        }
+        return `Uuuppss!!! you have already use all magic`
+        
     }
 
 } 
@@ -68,10 +78,10 @@ bulbasaur.learnAttackSkill(lightning)
 //pikachu.attack(0,bulbasaur)
 
 console.log(pikachu);
-console.log(bulbasaur);
-console.log(pikachu.attack(0,bulbasaur));
-
-
-
-
-
+//console.log(bulbasaur);
+console.log(pikachu.getMagic());
+console.log(pikachu);
+pikachu.getMagic()
+console.log(pikachu);
+console.log(pikachu.getMagic());
+console.log(pikachu.attack(poisonSeed,bulbasaur));
