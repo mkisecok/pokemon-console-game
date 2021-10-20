@@ -1,87 +1,115 @@
 
-class Pokemon
-{
-    constructor(name,health,magic)
-    {
-        this.name=name;
-        this.health=health;
-        this.magic=magic;
-        this.skills=[];
-        this.magicCount=0 
-    }
+const Pokemon = require('./Pokemon');
+const AttackSkill = require('./Attackskill');
 
- learnAttackSkill(skill)
-    {   // skill must repariert werden
-        this.skills.push(skill)
-        return `${this.name} launched skill ${skill} succesfully!`
-    }
+//Pokemon erstellt
+            //let squirtle = new Pokemon("Squirtle", 75, 25);
+            //console.log(squirtle);
+            //let charizard= new Pokemon('Charizard', 50, 45);
+            //console.log(charizard);
 
- showStatus()
-    {   if(this.health <= 0)
-        {
-            return `${this.name} is killed`
-        }
-        return `${this.name} hat currently ${this.health} health and ${this.magic} magic`
-    }
- 
- attack(key,poki)
-    {
-        if(this.magic >= this.skills[key].requireMagic)
-        {
-           this.magic -= this.skills[key].requireMagic;
-           poki.health -=this.skills[key].damagePoint;
-           return `${this.poki} got ${this.skills[key].damagePoint} damage as a result of the attack from ${this.name}`
-        }
-        return `${this.name} have not enough magic, cannot launch attack!`
+//skills erstellt
+            //let fire = new AttackSkill("Fire", 40, 30);
+            //let flying = new AttackSkill ("Flying", 30, 20);
+            //let spraysWater = new AttackSkill ("Sprays Water", 30, 25);
+            //let makeWaterBalloon = new AttackSkill ("Water Balloon", 20, 30);
+            //console.log(fire);
 
-   
+//status control
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
 
-    
+// learn charizard two Attack skills and check
 
- getMagic()
-    {   
-        if(this.magicCount < 2)
-        {
-            this.magic += 25
-            this.magicCount+=1
-            return `${this.name} got 25 magic back`
+            //charizard.learnAttackSkill(fire);
+            //charizard.learnAttackSkill(flying);
 
-        }
-        return `Uuuppss!!! you have already use all magic`
-        
-    }
+            //console.log(charizard.skills);
 
-} 
+// learn squirtle two Attack skills and check
 
-class AttackSkill
-{
-    constructor(attackName,damagePoint,requireMagic)
-    {  
-        this.attackName=attackName;
-        this.damagePoint= damagePoint;
-        this.requireMagic=requireMagic
-    }
-}
+            //squirtle.learnAttackSkill(spraysWater);
+            //squirtle.learnAttackSkill(makeWaterBalloon);
 
-let pikachu= new Pokemon('pikachu',100,50);
-let bulbasaur = new Pokemon("bulbasaur", 95, 105);
-let lightning = new AttackSkill("lightning", 40, 30);
-let poisonSeed = new AttackSkill ("poison seed", 20, 20);
+            //console.log(squirtle.skills);
 
-pikachu.learnAttackSkill(lightning)
-pikachu.learnAttackSkill(poisonSeed)
-bulbasaur.learnAttackSkill(poisonSeed)
-bulbasaur.learnAttackSkill(lightning)
-//console.log(pikachu.getMagic());
-//console.log(pikachu);
-//console.log(bulbasaur);
-//pikachu.attack(0,bulbasaur)
+//First attack  from charizard, check before and after their status 
 
-console.log(pikachu);
-//console.log(bulbasaur);
-console.log(pikachu.getMagic());
-console.log(pikachu);
-pikachu.getMagic()
-console.log(pikachu);
-console.log(pikachu.getMagic());
-console.log(pikachu.attack(poisonSeed,bulbasaur));
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// >>>>> attack and check is the attack type succesfull or not  
+
+                             // 0 = First skill in skills array
+            //console.log(charizard.attack(0,squirtle));  
+
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// Counter Attack from squirtle and check the attack type succesfull or not
+
+            //console.log(squirtle.attack(0,charizard));
+
+// check their status after this attack
+
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// New attack type from charizard check the attack type succesfull or not
+
+                             // 1 = Second skill in skills array 
+            //console.log(charizard.attack(1,squirtle)); 
+
+// check their status after this unsuccesfull attack
+
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// get a  magic with methode and check the magicCount before and after getMagic()
+
+
+            //console.log(charizard.magicCount);
+            //console.log(charizard.getMagic());
+            //console.log(charizard.magicCount);
+
+// check charizard status after getMagic()
+
+            //console.log(charizard.showStatus());
+
+// after getMagic() charizard attack once again
+
+            //console.log(charizard.attack(1,squirtle)); 
+
+// check their status after the charizards attack
+
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// once more counter attack type come from squirtle , check if its succesfull ?
+
+                            // 1 = second attack skill in skills array
+            //console.log(squirtle.attack(1,charizard));
+
+// get a  magic with methode and check the magicCount before and after getMagic()
+            //console.log(squirtle.showStatus());
+            //console.log(squirtle.magicCount);
+            //console.log(squirtle.getMagic());  // but that is not enough, need once more
+            //console.log(squirtle.magicCount);
+            //console.log(squirtle.getMagic());
+            //console.log(squirtle.magicCount);
+            //console.log(squirtle.showStatus());
+            //console.log(squirtle.getMagic());   // could not take more
+
+// after getMagic() squirtle attack once again 
+
+            //console.log(squirtle.attack(1,charizard));
+
+// check their status after this attack 
+
+            //console.log(charizard.showStatus());
+            //console.log(squirtle.showStatus());
+
+// Can charizard new attack despite dead ?
+
+            //console.log(charizard.attack(1,squirtle)); 
+
