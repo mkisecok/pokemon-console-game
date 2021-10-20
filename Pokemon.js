@@ -1,4 +1,4 @@
-const Attackskill = require('./Attackskill');
+//const Attackskill = require('./Attackskill');
 
 class Pokemon
 {
@@ -19,9 +19,9 @@ class Pokemon
  showStatus()
     {   if(this.health <= 0)
         {
-            return `${this.name} is killed `
+            return `${ this.name } is killed and lost the game`
         }
-        return `${this.name} hat currently ${this.health} health and ${this.magic} magic`
+        return `${ this.name } hat currently ${ this.health } health and ${ this.magic } magic`
     }
  
  attack(key,poki)
@@ -36,12 +36,12 @@ class Pokemon
            ${poki.name} got ${this.skills[key].damagePoint} damage as a result of the attack from ${this.name}`
 
         }
-        if(this.health <=0 )
+        if(this.health <= 0 )
         {
-            return `${this.name} is already dead`
+            return `${ this.name } is already dead. ${ poki.name } is the Winner`
         }
-        
-        return `${this.name} have not enough magic, cannot launch attack!`
+
+        return `${ this.name } have not enough magic, cannot launch attack!`
     }
    
 
@@ -53,14 +53,14 @@ class Pokemon
         {
             this.magic += 20;
             this.magicCount++;
-            return `${this.name} got 20 magic back and can get one more time 15 magic `
+            return `${ this.name } got 20 magic back and can get one more time 15 magic `
             
         }
         else if(this.magicCount < 2)
         {
             this.magic+=15;
             this.magicCount++
-            return `${this.name} got 15 magic back and that is the last Chance`
+            return `${ this.name } got 15 magic back and that is the last Chance`
             
         }
         
