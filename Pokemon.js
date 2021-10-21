@@ -24,7 +24,7 @@ class Pokemon
         return `${ this.name } hat currently ${ this.health } health and ${ this.magic } magic`
     }
  
- attack(key,poki)
+ attack(key=0,poki)
     {     
         if(this.health <= 0 )
         {
@@ -32,7 +32,7 @@ class Pokemon
             {
                 return `${this.name} is already dead. You can not kill yourself again`
             }
-            
+
             return `${ this.name } is already dead. ${ poki.name } is the Winner`
         }
         
