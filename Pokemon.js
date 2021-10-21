@@ -1,4 +1,4 @@
-//const Attackskill = require('./Attackskill');
+
 
 class Pokemon
 {
@@ -28,6 +28,11 @@ class Pokemon
     {     
         if(this.health <= 0 )
         {
+            if(this.name === poki.name)
+            {
+                return `${this.name} is already dead. You can not kill yourself again`
+            }
+            
             return `${ this.name } is already dead. ${ poki.name } is the Winner`
         }
         

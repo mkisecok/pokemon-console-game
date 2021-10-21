@@ -66,8 +66,10 @@ const AttackSkill = require('./Attackskill');
 
 // >>>>> attack and check is the attack type succesfull or not  
 
-                             // 0 = First skill in skills array
+                                            // 0 = First skill in skills array
             //console.log(charizard.attack(0,squirtle));  
+
+            //console.log('*'.repeat(50));
 
             //console.log(charizard.showStatus());
 
@@ -91,7 +93,7 @@ const AttackSkill = require('./Attackskill');
 
 // New attack type from charizard check the attack type succesfull or not
 
-                             // 1 = Second skill in skills array 
+                                            // 1 = Second skill in skills array 
             //console.log(charizard.attack(1,squirtle)); 
 
 // check their status after this unsuccesfull attack
@@ -123,6 +125,8 @@ const AttackSkill = require('./Attackskill');
 
             //console.log(charizard.attack(1,squirtle)); 
 
+            //console.log('*'.repeat(50));
+
 // check their status after the charizards attack
 
             //console.log(charizard.showStatus());
@@ -145,6 +149,7 @@ const AttackSkill = require('./Attackskill');
             //console.log(squirtle.magicCount);
 
             //console.log(squirtle.getMagic());  // but that is not enough, need once more
+
             //console.log(squirtle.magicCount);
 
             //console.log(squirtle.getMagic());
@@ -169,7 +174,20 @@ const AttackSkill = require('./Attackskill');
 
             //console.log('*'.repeat(50));
             
+
+// Can squirtle attack yourself ?
+
+            //console.log(squirtle.attack(1,squirtle));
+
+            //console.log('*'.repeat(50));
+
 // Can charizard new attack despite dead ?
 
             //console.log(charizard.attack(1,squirtle)); 
+
+// Can charizard attack yourself despite dead ?       
+
             //console.log(charizard.attack(0,charizard));
+
+
+            
