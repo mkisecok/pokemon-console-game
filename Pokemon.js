@@ -25,7 +25,19 @@ class Pokemon
     }
  
  attack(key,poki)
-    {
+    {     
+        if(this.health <= 0 )
+        {
+            return `${ this.name } is already dead. ${ poki.name } is the Winner`
+        }
+        
+        if (this.name === poki.name)
+        {
+            return `That is hazardous, Are you sure: Desire you attack to you ?? `
+        }
+
+        
+
         if(this.magic >= this.skills[key].requireMagic)
         {
            this.magic -= this.skills[key].requireMagic;
@@ -36,12 +48,8 @@ class Pokemon
            ${poki.name} got ${this.skills[key].damagePoint} damage as a result of the attack from ${this.name}`
 
         }
-        if(this.health <= 0 )
-        {
-            return `${ this.name } is already dead. ${ poki.name } is the Winner`
-        }
-
-        return `${ this.name } have not enough magic, cannot launch attack!`
+        
+       return `${ this.name } have not enough magic, cannot launch attack!`
     }
    
 

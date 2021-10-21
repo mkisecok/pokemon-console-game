@@ -5,16 +5,23 @@ const AttackSkill = require('./Attackskill');
 //Pokemon erstellt
 
             //let squirtle = new Pokemon("Squirtle", 75, 25);
+
             //console.log(squirtle);
+
             //let charizard= new Pokemon('Charizard', 50, 45);
+
             //console.log(charizard);
+
             //console.log('*'.repeat(50));
 
 //skills erstellt
 
             //let fire = new AttackSkill("Fire", 40, 30);
+
             //let flying = new AttackSkill ("Flying", 30, 20);
+
             //let spraysWater = new AttackSkill ("Sprays Water", 30, 25);
+            
             //let makeWaterBalloon = new AttackSkill ("Water Balloon", 20, 30);
 
             //console.log(fire);
@@ -159,10 +166,10 @@ const AttackSkill = require('./Attackskill');
             //console.log(charizard.showStatus());
 
             //console.log(squirtle.showStatus());
-            
+
             //console.log('*'.repeat(50));
             
 // Can charizard new attack despite dead ?
 
             //console.log(charizard.attack(1,squirtle)); 
-
+            //console.log(charizard.attack(0,charizard));
