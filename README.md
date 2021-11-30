@@ -32,54 +32,8 @@ For example, the following sequence:
 ```javascript
 //Each Pokemon should start with a certain amount of health and magic. For example, here Pikachu starts with 120 health and 80 magic 
 let pikachu = new Pokemon("pikachu", 120, 80);
-let bulbasaur = new Pokemon("bulbasaur", 95, 105);
+l
 
 //Each skill should do a certain amount of damage, and consume a certain amount of magic from the Pokemon that used the skill.
-let lightning = new AttackSkill("lightning", 40, 30);
-let poisonSeed = new AttackSkill ("poison seed", 20, 20);
-pikachu.learnAttackSkill(lightning);
-bulbasaur.learnAttackSkill(poisonSeed);
 
-//The first argument to `attack` should be the index (or key) of the attack
-pikachu.attack(0, bulbasaur);
-bulbasaur.attack(0, pikachu);
-pikachu.showStatus();
-bulbasaur.showStatus();
-pikachu.attack(0, bulbasaur);
-pikachu.attack(0, bulbasaur);
-pikachu.getMagic();
-pikachu.attack(0, bulbasaur);
-bulbasaur.attack(0, pikachu);
 
-// should log out the following to the console:
-
-// pikachu launched skill 'lightning' successfully!
-// bulbasaur got 40 damage
--------------------
-// bulbasaur launched skill 'poison seed' successfully!
-// pikachu got 20 damage
--------------------
-// pikachu status
-// health: 100
-// magic: 50
--------------------
-// bulbasaur status
-// health: 55
-// magic: 85
--------------------
-// pikachu launched skill 'lightning' successfully!
-// bulbasaur got 40 damage
--------------------
-// not enough magic, cannot launch attack!
--------------------
-// pikachu got 20 magic back
--------------------
-// pikachu launched skill 'lightning' successfully!
-// bulbasaur got 40 damage
--------------------
-// bulbasaur is killed!
--------------------
-// bulbasaur is already dead!
-// That's just one example. You can call different series of attacks to get different results!
-```
-## Bonus: Add some more Pokemon and attack types. 
